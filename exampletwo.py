@@ -39,7 +39,7 @@ parrot('a million', 'bereft of life', 'jump')         # 3 positional arguments
 print("\n------------------")
 parrot('a thousand', state='pushing up the daisies')
 
-print("\n==================================")
+print("=" * 50)
 def cheeseshop(kind, *arguments, **keywords):
     print("-- Do you have any", kind, "?")
     print("-- I'm sorry, we're all out of", kind)
@@ -56,10 +56,35 @@ cheeseshop("Limburger", "It's very runny, sir.",
             client="John Cleese",
             sketch="Cheese Shop Sketch")
 
-print("\n==================================")
-print("\n==================================")
-print("\n==================================")
-print("\n==================================")
+print("=" * 50)
+def foo(name, /, **kwds):
+    return 'name' in kwds
 
+print(foo(1, **{'name': 2}))
+
+print("=" * 50)
+def parrot(voltage, state='a stiff', action='voom'):
+    print("-- This parrot wouldn't", action, end=' ')
+    print("if you put", voltage, "volts through it.", end=' ')
+    print("E's", state, "!")
+d = {"voltage": "four million", "state": "bleedin' demised", "action": "VOOM"}
+parrot(**d)
+
+print("=" * 50)
+pairs = [(1, 'one'), (2, 'two'), (3, 'three'), (4, 'four')]
+pairs.sort(key=lambda pair: pair[1])
+print(pairs)
+print("=" * 50)
+def my_function():
+    """Do nothing, but document it.
+
+    No, really, it doesn't do anything.
+    """
+    pass
+print(my_function.__doc__)
+
+print("=" * 50)
+print("=" * 50)
 
 https://docs.python.org/3.11/tutorial/controlflow.html
+4.8.7. Documentation Strings
