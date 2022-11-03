@@ -1,4 +1,5 @@
 
+#https://docs.python.org/3.11/tutorial/datastructures.html#using-lists-as-stacks
 
 print('-' * 50)
 fruits = ['orange', 'apple', 'pear', 'banana', 'kiwi', 'apple', 'banana']
@@ -113,8 +114,22 @@ matrix = [
     [5, 6, 7, 8],
     [9, 10, 11, 12],
 ]
-print('.' * 5, [[row[i] for row in matrix] for i in range(4)])
+print( 'A ', '.' * 5, [[row[i] for row in matrix] for i in range(4)])
 transposed = []
 for i in range(4):
     transposed.append([row[i] for row in matrix])
-print('.' * 5, transposed)
+print('B ','.' * 5, transposed)
+
+
+trans = []
+for i in range(4):
+    # the following 3 lines implement the nested listcomp
+    transposed_row = []
+    for row in matrix:
+        transposed_row.append(row[i])
+    trans.append(transposed_row)
+print('C ','.' * 5, trans)
+
+print('D ','.' * 5, list(zip(*matrix)))
+
+
