@@ -26,6 +26,8 @@ from fibo import fib as fibonacci
 fibonacci(500)
 
 
+
+
 print('#' * 50)
 print('6.1.1. Executing modules as scripts')
 
