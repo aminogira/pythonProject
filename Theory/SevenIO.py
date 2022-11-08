@@ -89,6 +89,22 @@ for x in range(1, 11):
 
 print('7.1.3.2 ', '.' * 50)
 print('12'.zfill(5))
-
 print('-3.14'.zfill(7))
 print('3.14159265359'.zfill(5))
+
+print('7.1.3.3 ', '.' * 50)
+
+print('The value of pi is approximately %5.3f.' % math.pi)
+
+
+
+print('-' * 50)
+print('7.2. Reading and Writing Files')
+
+f = open('workfile', 'w', encoding="utf-8")
+
+with open('workfile', encoding="utf-8") as f:
+    read_data = f.read()
+
+
+
