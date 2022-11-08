@@ -70,6 +70,7 @@ print('Jack: {0[Jack]:d}; Sjoerd: {0[Sjoerd]:d}; '
       'Dcab: {0[Dcab]:d}'.format(table))
 
 
+
 print('7.1.2.6 ', '.' * 50)
 table = {'Sjoerd': 4127, 'Jack': 4098, 'Dcab': 8637678}
 print('Jack: {Jack:d}; Sjoerd: {Sjoerd:d}; Dcab: {Dcab:d}'.format(**table))
@@ -86,6 +87,8 @@ for x in range(1, 11):
     # Note use of 'end' on previous line
     print(repr(x*x*x).rjust(4))
 
+print('7.1.3.2 ', '.' * 50)
+print('12'.zfill(5))
 
-
-
+print('-3.14'.zfill(7))
+print('3.14159265359'.zfill(5))
