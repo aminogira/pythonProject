@@ -101,10 +101,23 @@ print('The value of pi is approximately %5.3f.' % math.pi)
 print('-' * 50)
 print('7.2. Reading and Writing Files')
 
-f = open('workfile', 'w', encoding="utf-8")
+#f = open('workfile', 'w', encoding="utf-8")
+#this will create new file
 
 with open('workfile', encoding="utf-8") as f:
     read_data = f.read()
 
+f = open('workfile', 'r', encoding="utf-8")
 
+print('7.2.1.1 ', '.' * 50)
+#f.read()
+#'This is the entire file.\n'
+
+print( 'aa ' , f.readline())
+'This is the first line of the file.\n'
+print('bb ' ,f.readline())
+'Second line of the file\n'
+
+for line in f:
+    print('ff ', line, end='')
 
