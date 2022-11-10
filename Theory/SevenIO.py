@@ -113,11 +113,53 @@ print('7.2.1.1 ', '.' * 50)
 #f.read()
 #'This is the entire file.\n'
 
+print('7.2.1.2 ', '.' * 50)
 print( 'aa ' , f.readline())
 'This is the first line of the file.\n'
 print('bb ' ,f.readline())
 'Second line of the file\n'
-
+print('7.2.1.3 ', '.' * 50)
 for line in f:
     print('ff ', line, end='')
+
+
+print('7.2.1.4 ', '.' * 50)
+#print(f.write('This is a test\n'))
+
+for line in f:
+    print('gg ', line, end='')
+
+print('7.2.1.5 ', '.' * 50)
+value = ('the answer', 42)
+s = str(value)  # convert the tuple to string
+#f.write(s)
+
+for line in f:
+    print('hh ', line, end='')
+
+print('7.2.1.6 ', '.' * 50)
+
+f = open('workfile', 'rb+')
+f.write(b'0123456789abcdef')
+
+
+for line in f:
+    print('ii ', line, end='')
+
+f.seek(5)
+print(f.read(5))
+
+
+print('-' * 50)
+print('7.2.2. Saving structured data with json')
+print('7.2.2.1 ', '.' * 50)
+
+import json
+x = [1, 'simple', 'list']
+print(json.dumps(x))
+
+print('7.2.2.2 ', '.' * 50)
+json.dump(x, f)
+x = json.load(f)
+print(x)
 
