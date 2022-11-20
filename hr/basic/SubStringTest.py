@@ -1,9 +1,16 @@
 def count_substring(string, sub_string):
     count = 0
     ii = 0
+    ind=-1
     while ii < (len(string) - len(sub_string)):
-        ind = string.index(sub_string, ii)
-        if ind > 0:
+
+        try:
+            ind = string.index(sub_string, ii)
+        except:
+            ii=len(string)
+            ind=-1
+
+        if ind > -1:
             count = count + 1
             ii = ind + 1
         else:
