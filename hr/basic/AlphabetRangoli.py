@@ -1,14 +1,16 @@
 def print_rangoli(size):
-    print('-'*50)
     alf = 'abcdefghijklmnopqrstuvwxyz'
     al = alf[:size][::-1]
-
-    width=(size*2-1)*2-1
-    print(width)
-    for a in al:
-        print(a)
-
-
+    lines=size*2-1
+    width=lines*2-1
+    nCha=0
+    toNxtN=1
+    for l in range(lines):
+        nCha=nCha+toNxtN
+        if(nCha>=len(al)): toNxtN=-1
+        lineCharSet=al[:nCha] + al[::-1][(len(al)-nCha+1):]
+        processedLineCharSet='-'.join(lineCharSet[i:i + 1] for i in range(0, len(lineCharSet), 1))
+        print(processedLineCharSet.center(width, '-'))
 
 
 if __name__ == '__main__':
